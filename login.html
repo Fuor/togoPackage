@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>登录</title>
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="top-bar">
+		<div class="logo">
+			<a href="index.html"><img alt="" src="images/logo.png"></a> <span>欢迎登录</span>
+		</div>
+	</div>
+	<div class="login-form">
+		<form action="#">
+			<div class="login-info">
+				<p>邮箱/用户名/已验证手机</p>
+					<div class="username-input"><i class="user-icon"></i><input type="text" placeholder="账号" id="username" /></div>
+				<p>密码</p>
+					<div class="password-input"><i class="password-icon"></i><input type="password" placeholder="密码" id="password"/></div>
+				<div class="save-longin">
+					<input type="checkbox" id="auto-login"><label for="auto-login">自动登录</label>
+					<input type="checkbox" id="save-widget"><label for="save-widget">安全控件登录</label>
+					<span><a href="#">忘记密码？</a></span>
+				</div>
+				<div class="error">
+					<span id="error-show" class="error-show"></span>
+				</div>
+				<input class="login-btn" type="button" value="登录" />
+				<div class="link">
+					<p>使用合作网站账号登录：</p>
+					<p>
+						<a href="#">QQ</a>
+						<a href="#">网易</a>
+						<a href="#">360</a>
+						<a href="#">开心网</a>
+						<a href="#">豆瓣</a>
+						<a href="#">搜狐</a>
+						<a href="#">更多</a>
+					</p>
+				</div>
+			</div>
+		</form>
+		<div>
+			<a class="free-reg" href="register.html">免费注册&gt;&gt;</a>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/components.js"></script>
+<script type="text/javascript" src="js/checkjs.js"></script>
+<script type="text/javascript">
+    enventUtil.addHandler(login_btn,"click",logshowError);//进行表单验证
+</script>
+</html>
