@@ -152,7 +152,7 @@ window.onload = function() {
 	}
 
 	// 回到顶部
-	var gotoTop = document.querySelector("#gotoTop");
+	var btn = document.querySelector("#gotoTop");
 	var timer = null;
 	var onscroll = true;
 
@@ -164,7 +164,7 @@ window.onload = function() {
 				|| document.body.scrollTop;
 		// 可视窗口高度
 		var clientHeight = document.documentElement.clientHeight;
-		var btn = document.getElementById("gotoTop");
+		//var btn = document.getElementById("gotoTop");
 		if (oTop >= clientHeight) {
 			btn.style.display = "block";
 		} else {
@@ -176,6 +176,23 @@ window.onload = function() {
 		}
 		onscroll = false;
 	}
+	// 返回顶部方法
+	function goTop(element) {
+		timer = setInterval(function() {
+			var oTop = document.documentElement.scrollTop
+					|| document.body.scrollTop;
+			var speed = Math.floor(-oTop / 3);
+			if (oTop > 0) {
+				document.documentElement.scrollTop = document.body.scrollTop = oTop
+						+ speed;
+				onscroll = true;
+			} else {
+				clearInterval(timer);
+			}
+		}, 40);
+	}
+	enventUtil.addHandler(btn, "click", goTop);
+	
 
 	/* 图片动画 */
 	// 取得图片
@@ -233,22 +250,6 @@ function hideCart() {
 }
 enventUtil.addHandler(middle_car, "mouseover", showCart);
 
-// 返回顶部方法
-function goTop(element) {
-	timer = setInterval(function() {
-		var oTop = document.documentElement.scrollTop
-				|| document.body.scrollTop;
-		var speed = Math.floor(-oTop / 3);
-		if (oTop > 0) {
-			document.documentElement.scrollTop = document.body.scrollTop = oTop
-					+ speed;
-			onscroll = true;
-		} else {
-			clearInterval(timer);
-		}
-	}, 40);
-}
-enventUtil.addHandler(gotoTop, "click", goTop);
 
 // 详情页HTML代码转义方法
 function HtmlDecode(str) {
