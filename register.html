@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>注册</title>
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo">
+            <a href="index.html"><img alt="" src="images/logo.png"></a> <span>欢迎注册</span>
+        </div>
+    </div>
+    <div class="reg-form">
+        <form action="#">
+            <div class="reg-info">
+                <p>用户名</p>
+                <div class="username-input"><i class="user-icon"></i><input type="text" placeholder="账号" id="username" /></div>
+                <p>密码</p>
+                <div class="password-input"><i class="password-icon"></i><input type="password" placeholder="密码" id="password"/></div>
+                <p>确认密码</p>
+                <div class="checkpass-input"><i class="password-icon"></i><input type="password" placeholder="请再次输入密码" id="repassword"/></div>
+                <p>邮箱</p>
+                <div class="checkpass-input"><i class="password-icon"></i><input type="text" placeholder="请输入邮箱号" id="email"/></div>
+                <div class="error">
+                    <span id="error-show" class="error-show">错误信息</span><!-- id="error-show" -->
+                </div>
+                <div class="agreement">
+                    <input type="checkbox" id="agreement-checkbox" checked >
+                    <label for="agreement-checkbox">我已阅读并同意</label>
+                    <a href="##">《用户协议》</a>
+                </div>
+                <input class="reg-btn" type="button" value="提交" />
+            </div>
+        </form>
+        <div>
+            <a class="login" href="login.html">登录&gt;&gt;</a>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/components.js"></script>
+<script type="text/javascript" src="js/checkjs.js"></script>
+<script type="text/javascript">
+    enventUtil.addHandler(reg_btn,"click",regshowError);//进行表单验证
+</script>
+</html>
