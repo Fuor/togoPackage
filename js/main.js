@@ -38,9 +38,9 @@ window.onload = function() {
 	}
 	function hideDropdown() {
 		var url = window.location.href;
-		var domain = document.domain;
+		var domain = document.domain+"/togoPackage" || document.domain+"/togoPackage/";
 		var index = url.indexOf("index.html") < 0;
-		if (index && url!=domain+"togoPackage") {
+		if (index && url!=domain) {
 			dropdownbar.className += " list-dropdownbar";// 添加隐藏类list-dropdownbar
 		}
 	}
